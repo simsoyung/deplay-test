@@ -2,8 +2,15 @@
 
 const Sequelize = require("sequelize");
 let config = require(__dirname + "/../config/config.js");
-console.log(config);
-config = config["development"];
+// console.log(config);
+const env = process.env.NODE_ENV || "development";
+// development 혹은 production / undefined 확률도 있기 때문에 기본값을 넣어야함
+// 앞에 있는 값이 있다면 앞에 값을 넣고 없다면! 뒤에 값을 넣어줘!
+// 어떤 환경에서 접근하느냐에 따라서 다른 문자열이 들어감
+console.log("env", env);
+console.log("NODE_ENV ", process.env.NODE_ENV);
+
+config = config[env];
 console.log("config", config);
 const db = {};
 
