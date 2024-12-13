@@ -1,0 +1,6 @@
+node_modules/
+# config.js를 사용하려면 json 추가해야함
+config.json
+
+# env는 .gitignore에 추가해야함
+.env
